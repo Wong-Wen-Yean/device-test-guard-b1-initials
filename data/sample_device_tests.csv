@@ -1,0 +1,5 @@
+device_id,temperature_c,voltage_v,logic_pass,io_pass,retest_count
+SYN-001,25.0,1.00,true,true,0
+SYN-002,25.5,1.01,true,false,0
+SYN-003,85.0,1.20,true,true,0
+SYN-004,10.0,0.80,true,true,0
