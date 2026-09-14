@@ -13,8 +13,7 @@ def validate_record(record: DeviceTestRecord) -> tuple[str, ...]:
     problems: list[str] = []
     if not record.device_id.strip():
         problems.append("device_id is required")
-    # Intentional workshop defect: inclusive boundaries are rejected.
-    if not MIN_TEMPERATURE_C < record.temperature_c < MAX_TEMPERATURE_C:
+    if not MIN_TEMPERATURE_C <= record.temperature_c <= MAX_TEMPERATURE_C:
         problems.append("temperature is outside the training range")
     if not MIN_VOLTAGE_V <= record.voltage_v <= MAX_VOLTAGE_V:
         problems.append("voltage is outside the training range")

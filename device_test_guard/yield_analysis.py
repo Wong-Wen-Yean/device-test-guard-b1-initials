@@ -7,6 +7,7 @@ from .models import DeviceTestRecord
 
 def calculate_yield(records: Sequence[DeviceTestRecord]) -> float:
     """Calculate passing-device percentage for a fictional batch."""
-    # Intentional workshop defect: empty input divides by zero.
+    if not records:
+        return 0.0
     passed = sum(record.passed for record in records)
     return round(passed / len(records) * 100.0, 2)
