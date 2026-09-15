@@ -44,7 +44,7 @@ class Day1IntegratedTests(unittest.TestCase):
         self.assertEqual(summary.record_count, 0)
         self.assertEqual(summary.yield_percent, 0.0)
         self.assertEqual(summary.disposition, "HOLD")
-
+        self.assertEqual(summary.reasons, ("batch is empty",))
 
 if __name__ == "__main__":
     unittest.main()
